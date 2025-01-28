@@ -22,7 +22,7 @@ const Introduction = () => {
         </p>
       </div>
       <div className="relative mt-8 w-5/6 rounded-xl border-t-4 border-white/10 bg-white/5 px-4 py-5 text-center lg:mt-24 lg:px-5 lg:py-5">
-        <p className="text-base font-semibold leading-normal text-white/40 lg:text-3xl lg:leading-snug">
+        <p className="text-balance text-base font-semibold leading-normal text-white/40 lg:text-pretty lg:text-3xl">
           I am an AIML student with a passion for coding and development. I
           enjoy exploring and understanding various technologies and how they
           work.
@@ -41,7 +41,7 @@ const Profile = () => {
     <div className="order-1 flex h-full w-full flex-col items-center py-10 md:order-2 lg:py-0 lg:pt-64">
       <div className="relative rounded-2xl border border-white/10 bg-white/10 p-1 lg:p-1.5">
         <ProfileImage />
-        <div className="absolute inset-0 -z-10 bg-orange-300/80 blur-3xl" />
+        <div className="absolute inset-0 -z-10 bg-orange-300/60 blur-3xl" />
       </div>
     </div>
   );

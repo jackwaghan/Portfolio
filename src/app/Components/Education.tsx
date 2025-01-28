@@ -11,7 +11,7 @@ const educationData = [
     title: "Higher Secondary Education",
     year: "2020 - 2021",
     description:
-      "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 95% score in the board examinations.",
+      "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 84% score in the board examinations.",
   },
   {
     title: "Bachelor of Engineering in Computer Science and Engineering",
@@ -37,7 +37,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   <div
     className={`relative flex ${alignRight ? "justify-end" : "justify-start"}`}
   >
-    <div className="absolute inset-0 flex items-center justify-start pl-4 md:justify-center md:pl-1">
+    <div className="absolute inset-0 -z-10 flex items-center justify-start pl-4 md:justify-center md:pl-1">
       <div className="h-3 w-3 rounded-full bg-white"></div>
     </div>
     <div

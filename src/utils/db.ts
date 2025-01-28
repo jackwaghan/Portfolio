@@ -112,5 +112,14 @@ export const SkillsList = {
       description:
         "A source-code editor developed by Microsoft for Windows, Linux, and macOS.",
     },
+    {
+      name: "Bun" as const,
+      description: "A simple and lightweight task runner for Node.js.",
+    },
+    {
+      name: "Cloudflare Workers" as const,
+      description:
+        "A serverless platform that enables developers to deploy applications globally.",
+    },
   ],
 };

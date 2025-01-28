@@ -1,9 +1,12 @@
 import React from "react";
-import { TbBrandPython, TbBrandCss3 } from "react-icons/tb";
+import { TbBrandCss3 } from "react-icons/tb";
 import { RiJavascriptLine } from "react-icons/ri";
 import { LiaHtml5 } from "react-icons/lia";
 import { FaReact } from "react-icons/fa";
 import { SkillsList } from "@/utils/db";
+import bun from "../../../public/bun.svg";
+import CloudflareWorkers from "../../../public/CloudflareWorkers.svg";
+import Python from "../../../public/python.svg";
 import TailwindCss from "../../../public/tailwind-css.svg";
 import Typescript from "../../../public/Typescript.svg";
 import Nextjs from "../../../public/Nextjs.svg";
@@ -61,7 +64,7 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
     HTML: <LiaHtml5 className="text-orange-600" size={20} />,
     CSS: <TbBrandCss3 className="text-green-600" size={20} />,
     JavaScript: <RiJavascriptLine className="text-yellow-400" size={20} />,
-    Python: <TbBrandPython className="text-blue-800" size={20} />,
+    Python: <Image src={Python} alt="Python Icon" width={35} />,
     React: <FaReact className="text-sky-500" size={20} />,
     "Tailwind CSS": <Image src={TailwindCss} alt="Tailwind CSS" width={20} />,
     Typescript: <Image src={Typescript} alt="Typescript" width={20} />,
@@ -78,6 +81,10 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
       />
     ),
     "VS Code": <Image src={Vscode} alt="Vs Code" width={20} />,
+    Bun: <Image src={bun} alt="bun" width={20} />,
+    "Cloudflare Workers": (
+      <Image src={CloudflareWorkers} alt="Cloudflare Workers" width={20} />
+    ),
   };
 
   return (
@@ -86,7 +93,7 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
         {icons[item.name]}
         <h1 className="text-xl font-semibold">{item.name}</h1>
       </div>
-      <div className="text-sm text-white/40 lg:text-base">
+      <div className="h-full text-sm text-white/40">
         <p>{item.description}</p>
       </div>
     </div>

@@ -24,6 +24,8 @@ export type SkillItem = {
     | "GitHub"
     | "Node Js"
     | "Express Js"
-    | "VS Code";
+    | "VS Code"
+    | "Bun"
+    | "Cloudflare Workers";
   description: string;
 };
