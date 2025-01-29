@@ -39,6 +39,4 @@ export function useLenis() {
       lenis.destroy();
     };
   }, []);
-
-  return null; // This component doesn't render anything
 }

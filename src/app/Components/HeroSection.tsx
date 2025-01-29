@@ -13,11 +13,11 @@ const HeroSection = () => {
 const Introduction = () => {
   return (
     <div className="order-2 flex h-full w-full flex-col items-center md:order-1 lg:pt-40">
-      <div className="flex flex-col items-center gap-3 font-semibold lg:gap-8">
-        <p className="font-mono text-2xl tracking-tight text-orange-200/40 lg:text-6xl">
+      <div className="flex flex-col items-center gap-3 lg:gap-8">
+        <p className="font-mono text-2xl font-bold tracking-tight text-orange-200/40 lg:text-6xl">
           Hey 👋, I am
         </p>
-        <p className="whitespace-nowrap font-mono text-4xl tracking-tight text-orange-300 lg:text-8xl">
+        <p className="whitespace-nowrap font-mono text-4xl font-bold tracking-tight text-orange-300 lg:text-8xl">
           Jack Waghan
         </p>
       </div>
