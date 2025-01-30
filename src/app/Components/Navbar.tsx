@@ -1,12 +1,13 @@
 import React from "react";
 import type { MenuType } from "@/Types/type";
 import { MenuList } from "@/utils/db";
-import { Logo } from "./ui/Logo";
+import Logo from "./ui/Logo";
 
 const Navbar = () => {
   return (
     <div className="container sticky top-0 z-50 mx-auto flex h-16 w-full items-center justify-between bg-transparent px-4 backdrop-blur lg:h-20">
       <Logo />
+
       <LargeScreenMenu items={MenuList} />
       <HireMeButton />
     </div>
