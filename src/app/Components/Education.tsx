@@ -47,7 +47,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
       <h1 className="font-poppins text-lg font-semibold text-white/40">
         {year}
       </h1>
-      <h1 className="font-poppins text-base leading-normal text-white/60 lg:leading-relaxed">
+      <h1 className="font-poppins text-sm leading-normal text-white/60 lg:text-base lg:leading-relaxed">
         {description}
       </h1>
     </div>

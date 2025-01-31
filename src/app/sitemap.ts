@@ -1,10 +1,12 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://jackwaghan.com";
+
   return [
     {
-      url: "https://jackwaghan.com",
-      lastModified: new Date(),
+      url: baseUrl,
+      lastModified: new Date().toISOString(),
       changeFrequency: "daily",
       priority: 1.0,
       images: [

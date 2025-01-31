@@ -13,7 +13,23 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Portfolio - [ Jack Waghan ]",
   description:
-    "This is the Portfolio site of me , built on top of Next js and Typescript",
+    "This is the Portfolio site of me, built on top of Next.js and TypeScript",
+  openGraph: {
+    title: "Portfolio - [ Jack Waghan ]",
+    description:
+      "This is the Portfolio site of me, built on top of Next.js and TypeScript",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dqswovyzi/image/upload/v1738251548/Portfolio/wfz9ph5xnzoyfz6svshu.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Preview",
+      },
+    ],
+  },
+  icons: {
+    icon: "https://raw.githubusercontent.com/jackwaghan/portfolio/refs/heads/main/src/app/favicon.ico?token=GHSAT0AAAAAAC547EO4J6QEG7M7ARIHBD7IZ44PZNQ",
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +39,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${poppins.variable} antialiased`}>
+      <head />
+      <body className={`${poppins.variable} antialiased`}>
         <Navbar />
         <LenisProvider />
         {children}
