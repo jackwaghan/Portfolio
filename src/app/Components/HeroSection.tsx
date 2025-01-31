@@ -14,15 +14,15 @@ const Introduction = () => {
   return (
     <div className="order-2 flex h-full w-full flex-col items-center md:order-1 lg:pt-40">
       <div className="flex flex-col items-center gap-3 lg:gap-8">
-        <p className="font-mono text-2xl font-bold tracking-tight text-orange-200/40 lg:text-6xl">
+        <p className="font-poppins text-2xl font-semibold tracking-tight text-orange-200/40 lg:text-6xl">
           Hey 👋, I am
         </p>
         <p className="whitespace-nowrap font-mono text-4xl font-bold tracking-tight text-orange-300 lg:text-8xl">
           Jack Waghan
         </p>
       </div>
-      <div className="relative mt-8 w-5/6 rounded-xl border-t-4 border-white/10 bg-white/5 px-4 py-5 text-center lg:mt-24 lg:px-5 lg:py-5">
-        <p className="text-balance text-base font-semibold leading-normal text-white/40 lg:text-pretty lg:text-3xl">
+      <div className="relative mt-8 w-5/6 rounded-xl border-t-4 border-white/10 bg-white/5 px-4 py-4 text-center lg:mt-24 lg:px-6 lg:py-5">
+        <p className="font-poppins text-center text-sm font-semibold leading-normal text-white/40 lg:text-pretty lg:text-2xl lg:leading-snug">
           I am an AIML student with a passion for coding and development. I
           enjoy exploring and understanding various technologies and how they
           work.

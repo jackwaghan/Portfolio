@@ -21,7 +21,7 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
         {items.map((menu, index) => (
           <li
             key={index}
-            className="cursor-pointer rounded-lg px-2.5 py-1.5 hover:bg-white/10"
+            className="font-poppins cursor-pointer rounded-lg px-2 py-1.5 font-medium hover:bg-white/10"
           >
             {menu.name}
           </li>

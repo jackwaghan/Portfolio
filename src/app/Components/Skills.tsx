@@ -25,7 +25,7 @@ const Skills = () => {
         <h1 className="font-mono text-4xl font-bold tracking-tight text-orange-300 md:text-6xl">
           Skills
         </h1>
-        <p className="w-4/5 text-center font-semibold text-white/40 md:text-2xl">
+        <p className="font-poppins w-4/5 text-center font-semibold text-white/40 md:text-2xl">
           Here are my Skills on which I am experienced over time
         </p>
       </div>
@@ -91,9 +91,11 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
     <div className="grid grid-cols-1 gap-3 rounded-xl border-t-4 border-white/10 bg-white/5 p-5 backdrop-blur-3xl md:max-w-xs md:grid-rows-1">
       <div className="flex items-center justify-start gap-2">
         {icons[item.name]}
-        <h1 className="text-xl font-semibold">{item.name}</h1>
+        <h1 className="font-poppins text-lg font-semibold lg:text-xl">
+          {item.name}
+        </h1>
       </div>
-      <div className="h-full text-sm text-white/40">
+      <div className="font-poppins h-full text-xs font-medium leading-normal text-white/40 lg:text-sm">
         <p>{item.description}</p>
       </div>
     </div>

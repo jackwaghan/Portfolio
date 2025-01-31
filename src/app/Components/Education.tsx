@@ -39,11 +39,17 @@ const EducationItem: React.FC<EducationItemProps> = ({
       <div className="h-3 w-3 rounded-full bg-white"></div>
     </div>
     <div
-      className={`ml-16 flex flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-4 md:w-[40%] ${alignRight ? "md:mr-10" : "md:ml-10"}`}
+      className={`ml-16 flex flex-col gap-4 rounded-lg border border-white/10 bg-white/5 p-4 md:w-[40%] ${alignRight ? "md:mr-10" : "md:ml-10"}`}
     >
-      <h1 className="text-md font-bold text-orange-200 md:text-2xl">{title}</h1>
-      <h1 className="text-lg font-semibold text-white/40">{year}</h1>
-      <h1 className="text-base text-white/60">{description}</h1>
+      <h1 className="font-mono text-lg font-bold text-orange-200 md:text-2xl">
+        {title}
+      </h1>
+      <h1 className="font-poppins text-lg font-semibold text-white/40">
+        {year}
+      </h1>
+      <h1 className="font-poppins text-base leading-normal text-white/60 lg:leading-relaxed">
+        {description}
+      </h1>
     </div>
   </div>
 );
