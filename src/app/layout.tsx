@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import LenisProvider from "./Components/LenisProvider";
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -44,6 +45,8 @@ export default function RootLayout({
         <Navbar />
         <LenisProvider />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
