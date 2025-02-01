@@ -1,16 +1,16 @@
 import { Download } from "lucide-react";
 import { ProfileImage } from "./ui/ProfileImage";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 
 const HeroSection = () => {
-  const { ref: homeRef, inView: homeInView } = useInView({
-    threshold: 0.5,
-  });
-  if (homeInView) {
-  }
+  // const { ref: homeRef, inView: homeInView } = useInView({
+  //   threshold: 0.5,
+  // });
+  // if (homeInView) {
+  // }
   return (
     <div
-      ref={homeRef}
+      // ref={homeRef}
       className="container mx-auto grid h-full grid-cols-1 md:grid-cols-2"
     >
       <Introduction />

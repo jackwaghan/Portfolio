@@ -1,49 +1,49 @@
 export const MenuList = [
   {
-    name: "Home",
+    name: "home",
     pathname: "/",
-    href: "#home",
+    href: "#",
     LargeScreen: {
       width: "70px",
-      left: "15px",
+      left: "0px",
     },
     SmallScreen: {
       icon: "H",
     },
   },
   {
-    name: "Skills",
-    pathname: "/Skill",
-    href: "#skill",
+    name: "skills",
+    pathname: "/Skills",
+    href: "#skills",
 
     LargeScreen: {
       width: "70px",
-      left: "98px",
+      left: "80px",
     },
     SmallScreen: {
       icon: "A",
     },
   },
   {
-    name: "Education",
+    name: "education",
     pathname: "/Education",
     href: "#education",
 
     LargeScreen: {
-      width: "80px",
-      left: "183px",
+      width: "105px",
+      left: "160px",
     },
     SmallScreen: {
       icon: "P",
     },
   },
   {
-    name: "Projects",
+    name: "projects",
     pathname: "/Projects",
     href: "#projects",
 
     LargeScreen: {
-      width: "80px",
+      width: "85px",
       left: "278px",
     },
     SmallScreen: {

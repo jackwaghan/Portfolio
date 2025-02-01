@@ -13,24 +13,6 @@ export const metadata: Metadata = {
   title: "Portfolio - [ Jack Waghan ]",
   description:
     "This is the Portfolio site of me, built on top of Next.js and TypeScript",
-  openGraph: {
-    title: "Portfolio - [ Jack Waghan ]",
-    description:
-      "This is the Portfolio site of me, built on top of Next.js and TypeScript",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dqswovyzi/image/upload/v1738251548/Portfolio/wfz9ph5xnzoyfz6svshu.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Portfolio Image Preview",
-      },
-    ],
-  },
-  icons: {
-    icon: "https://res.cloudinary.com/dqswovyzi/image/upload/v1738251548/Portfolio/wfz9ph5xnzoyfz6svshu.jpg",
-  },
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({

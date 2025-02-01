@@ -1,4 +1,5 @@
 "use client";
+import { create } from "zustand";
 import { useEffect, useState } from "react";
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -30,3 +31,22 @@ export function useScroll() {
   });
   return scroll;
 }
+
+interface storeprops {
+  active: string;
+  setactive: (value: string) => void;
+  size: { width: string; left: string };
+  setsize: (value: { widthValue: string; leftValue: string }) => void;
+}
+export const store = create<storeprops>((set) => ({
+  active: "",
+  setactive: (state) => set({ active: state }),
+  size: { width: "0", left: "0" },
+  setsize: ({ widthValue, leftValue }) =>
+    set({
+      size: {
+        width: widthValue,
+        left: leftValue,
+      },
+    }),
+}));

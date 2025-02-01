@@ -26,7 +26,7 @@ const Skills = () => {
   }
   return (
     <div
-      id="skill"
+      id="skills"
       ref={skillsRef}
       className="container mx-auto flex h-full w-full flex-col px-4 pt-20 md:pt-36"
     >
