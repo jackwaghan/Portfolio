@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: new Date().toISOString(),
-      changeFrequency: "daily",
+      changeFrequency: "always",
       priority: 1.0,
       images: [
         "https://res.cloudinary.com/dqswovyzi/image/upload/v1738251548/Portfolio/wfz9ph5xnzoyfz6svshu.jpg",

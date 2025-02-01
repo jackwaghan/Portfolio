@@ -1,19 +1,20 @@
+import { useInView } from "react-intersection-observer";
 const educationData = [
   {
     title: "Secondary Education",
-    year: "2018 - 2019",
+    year: "2019 - 2020",
     description:
       "Completed secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 95% score in the board examinations.",
   },
   {
     title: "Higher Secondary Education",
-    year: "2020 - 2021",
+    year: "2021 - 2022",
     description:
       "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 84% score in the board examinations.",
   },
   {
     title: "Bachelor of Engineering in Computer Science and Engineering",
-    year: "2021 - 2026",
+    year: "2022 - 2026",
     description:
       "Pursuing a Bachelor's degree in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at SRM Institute of Science and Technology, Kattankulathur, Tamil Nadu.",
   },
@@ -55,8 +56,17 @@ const EducationItem: React.FC<EducationItemProps> = ({
 );
 
 const Education = () => {
+  const { ref: educationRef, inView: educationInView } = useInView({
+    threshold: 0.5,
+  });
+  if (educationInView) {
+  }
   return (
-    <div className="container mx-auto mt-20 px-4 md:mt-32">
+    <div
+      ref={educationRef}
+      id="education"
+      className="container mx-auto px-4 pt-20 md:pt-32"
+    >
       <div className="flex justify-center">
         <h1 className="font-mono text-4xl font-bold text-orange-300 md:text-6xl">
           Education

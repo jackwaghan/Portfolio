@@ -9,6 +9,7 @@ const socialLinks = [
         className="duration-100 group-hover:fill-orange-400"
       />
     ),
+    label: "LinkedIn",
   },
   {
     href: "https://github.com/jackwaghan",
@@ -18,6 +19,7 @@ const socialLinks = [
         className="duration-100 group-hover:fill-orange-400"
       />
     ),
+    label: "Github",
   },
   {
     href: "https://instagram.com/JackWaghan",
@@ -27,6 +29,7 @@ const socialLinks = [
         className="duration-100 group-hover:fill-orange-400"
       />
     ),
+    label: "Instagram",
   },
 ];
 
@@ -46,6 +49,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={link.label}
                   className="group rounded-xl p-2 hover:bg-white/5"
                 >
                   {link.icon}

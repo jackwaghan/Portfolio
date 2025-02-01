@@ -1,6 +1,7 @@
 export type MenuType = {
   name: string;
   pathname: string;
+  href: string;
   LargeScreen: {
     width: string;
     left: string;

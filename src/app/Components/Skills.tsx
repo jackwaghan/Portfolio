@@ -17,15 +17,24 @@ import Expressjs from "../../../public/Expressjs.svg";
 import Vscode from "../../../public/Vscode.svg";
 import type { SkillItem } from "@/Types/type";
 import Image from "next/image";
-
+import { useInView } from "react-intersection-observer";
 const Skills = () => {
+  const { ref: skillsRef, inView: skillsInView } = useInView({
+    threshold: 0.5,
+  });
+  if (skillsInView) {
+  }
   return (
-    <div className="container mx-auto mt-20 flex h-full w-full flex-col px-4 md:mt-36">
+    <div
+      id="skill"
+      ref={skillsRef}
+      className="container mx-auto flex h-full w-full flex-col px-4 pt-20 md:pt-36"
+    >
       <div className="flex flex-col items-center justify-center gap-6">
         <h1 className="font-mono text-4xl font-bold tracking-tight text-orange-300 md:text-6xl">
           Skills
         </h1>
-        <p className="font-poppins w-4/5 text-center font-semibold text-white/40 md:text-2xl">
+        <p className="w-4/5 text-center font-poppins font-semibold text-white/40 md:text-2xl">
           Here are my Skills on which I am experienced over time
         </p>
       </div>
@@ -95,7 +104,7 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
           {item.name}
         </h1>
       </div>
-      <div className="font-poppins h-full text-xs font-medium leading-normal text-white/40 lg:text-sm">
+      <div className="h-full font-poppins text-xs font-medium leading-normal text-white/40 lg:text-sm">
         <p>{item.description}</p>
       </div>
     </div>

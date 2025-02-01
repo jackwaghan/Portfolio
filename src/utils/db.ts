@@ -2,6 +2,7 @@ export const MenuList = [
   {
     name: "Home",
     pathname: "/",
+    href: "#home",
     LargeScreen: {
       width: "70px",
       left: "15px",
@@ -11,8 +12,10 @@ export const MenuList = [
     },
   },
   {
-    name: "About",
-    pathname: "/About",
+    name: "Skills",
+    pathname: "/Skill",
+    href: "#skill",
+
     LargeScreen: {
       width: "70px",
       left: "98px",
@@ -22,8 +25,10 @@ export const MenuList = [
     },
   },
   {
-    name: "Projects",
-    pathname: "/Projects",
+    name: "Education",
+    pathname: "/Education",
+    href: "#education",
+
     LargeScreen: {
       width: "80px",
       left: "183px",
@@ -33,8 +38,10 @@ export const MenuList = [
     },
   },
   {
-    name: "Contact",
-    pathname: "/Contact",
+    name: "Projects",
+    pathname: "/Projects",
+    href: "#projects",
+
     LargeScreen: {
       width: "80px",
       left: "278px",

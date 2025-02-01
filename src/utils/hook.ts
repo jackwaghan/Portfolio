@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Lenis from "@studio-freight/lenis";
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: 0,
@@ -20,23 +19,14 @@ export function useWindowSize() {
   return windowSize;
 }
 
-export function useLenis() {
+export function useScroll() {
+  const [scroll, setScroll] = useState(0);
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 4,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+    function handleScroll() {
+      setScroll(window.scrollY);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  return scroll;
 }

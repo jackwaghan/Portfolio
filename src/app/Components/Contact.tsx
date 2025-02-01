@@ -2,8 +2,8 @@ import { Button } from "./ui/Button";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto flex flex-col">
-      <div className="mt-20 flex items-center justify-center md:mt-36">
+    <div id="contact" className="container mx-auto flex flex-col">
+      <div className="flex items-center justify-center pt-20 md:pt-36">
         <h1 className="font-mono text-4xl font-bold tracking-tight text-orange-300 md:text-6xl">
           Hire Me
         </h1>

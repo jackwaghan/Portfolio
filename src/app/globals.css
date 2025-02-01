@@ -4,26 +4,22 @@
 
 html {
   @apply overflow-x-hidden bg-stone-900 text-white/80;
+  scroll-behavior: smooth;
 }
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-html::-webkit-scrollbar {
-  display: none;
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
 }
-
-html.lenis,
-html.lenis body {
-  height: auto;
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100px;
 }
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 100px;
 }
-
-.lenis.lenis-stopped {
-  overflow: clip;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #969393;
 }
