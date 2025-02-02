@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { LRUCache } from "lru-cache"; // Use named import
 
+export const runtime = "edge";
+
 const rateLimit = new LRUCache<string, number>({
   max: 100, // Store up to 100 IPs
   ttl: 60 * 1000, // 1-minute expiration
