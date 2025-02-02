@@ -21,12 +21,12 @@ import { useInView } from "react-intersection-observer";
 import { store } from "@/utils/hook";
 import { MenuList } from "@/utils/db";
 const Skills = () => {
-  const { setsize, scroll, setscroll, setactive } = store();
+  const { setsize, scroll, setscroll, setactive, active } = store();
   const { ref: skillsRef, inView: skillsInView } = useInView({
     threshold: 0.5,
   });
   useEffect(() => {
-    if (skillsInView && scroll) {
+    if (skillsInView && (scroll || active == "skills")) {
       const value = MenuList.find((menu) => menu.name == "skills");
       setsize({
         widthValue: value?.LargeScreen.width || "",
@@ -35,7 +35,7 @@ const Skills = () => {
       setscroll(true);
       setactive("skills");
     }
-  }, [skillsInView, setsize, scroll, setscroll, setactive]);
+  }, [skillsInView, setsize, setscroll, setactive, active, scroll]);
   return (
     <div
       id="skills"

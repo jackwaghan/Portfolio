@@ -6,12 +6,12 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 const HeroSection = () => {
-  const { scroll, size, setsize, setscroll, setactive } = store();
+  const { scroll, size, setsize, setscroll, active, setactive } = store();
   const { ref: homeRef, inView: homeInView } = useInView({
     threshold: 0.5,
   });
   useEffect(() => {
-    if (homeInView && scroll) {
+    if (homeInView && (scroll || active == "home")) {
       const value = MenuList.find((menu) => menu.name == "home");
       setsize({
         widthValue: value?.LargeScreen.width || "",
@@ -20,7 +20,7 @@ const HeroSection = () => {
       setscroll(true);
       setactive("home");
     }
-  }, [homeInView, setsize, setscroll, scroll, setactive]);
+  }, [homeInView, setsize, setscroll, scroll, active, setactive]);
   console.log(size);
   return (
     <div

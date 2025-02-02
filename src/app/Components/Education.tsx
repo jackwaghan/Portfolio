@@ -59,12 +59,12 @@ const EducationItem: React.FC<EducationItemProps> = ({
 );
 
 const Education = () => {
-  const { setsize, setscroll, scroll, setactive } = store();
+  const { setsize, setscroll, scroll, setactive, active } = store();
   const { ref: educationRef, inView: educationInView } = useInView({
     threshold: 0.5,
   });
   useEffect(() => {
-    if (educationInView && scroll) {
+    if (educationInView && (scroll || active == "education")) {
       const value = MenuList.find((menu) => menu.name == "education");
       setsize({
         widthValue: value?.LargeScreen.width || "",
@@ -73,7 +73,7 @@ const Education = () => {
       setscroll(true);
       setactive("education");
     }
-  }, [educationInView, setsize, setscroll, scroll, setactive]);
+  }, [educationInView, setsize, setscroll, scroll, setactive, active]);
 
   return (
     <div

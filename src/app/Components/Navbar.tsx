@@ -21,12 +21,10 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
   return (
     <div className="relative z-50 hidden items-center justify-center rounded-lg border border-white/15 bg-white/10 px-2.5 py-1.5 backdrop-blur lg:flex">
       <div className="relative flex items-center justify-center gap-3">
-        {
-          <div
-            className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-white/20 duration-300"
-            style={{ width: `${size.width}`, left: `${size.left}` }}
-          />
-        }
+        <div
+          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-white/20 duration-300"
+          style={{ width: `${size.width}`, left: `${size.left}` }}
+        />
 
         {items.map((menu, index) => (
           <a
@@ -46,10 +44,6 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
               });
             }}
             onClick={() => {
-              setsize({
-                leftValue: menu.LargeScreen.left,
-                widthValue: menu.LargeScreen.width,
-              });
               setactive(menu.name);
               setscroll(false);
             }}
