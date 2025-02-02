@@ -1,6 +1,7 @@
-// import { store } from "@/utils/hook";
-// import { useEffect } from "react";
-// import { InView, useInView } from "react-intersection-observer";
+import { MenuList } from "@/utils/db";
+import { store } from "@/utils/hook";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 const educationData = [
   {
     title: "Secondary Education",
@@ -58,14 +59,25 @@ const EducationItem: React.FC<EducationItemProps> = ({
 );
 
 const Education = () => {
-  // const { ref: educationRef, inView: educationInView } = useInView({
-  //   threshold: 0.5,
-  // });
-  // if (educationInView) {
-  // }
+  const { setsize, setscroll, scroll, setactive } = store();
+  const { ref: educationRef, inView: educationInView } = useInView({
+    threshold: 0.5,
+  });
+  useEffect(() => {
+    if (educationInView && scroll) {
+      const value = MenuList.find((menu) => menu.name == "education");
+      setsize({
+        widthValue: value?.LargeScreen.width || "",
+        leftValue: value?.LargeScreen.left || "",
+      });
+      setscroll(true);
+      setactive("education");
+    }
+  }, [educationInView, setsize, setscroll, scroll, setactive]);
+
   return (
     <div
-      // ref={educationRef}
+      ref={educationRef}
       id="education"
       className="container mx-auto px-4 pt-20 md:pt-32"
     >

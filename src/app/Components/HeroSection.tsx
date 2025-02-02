@@ -1,16 +1,30 @@
 import { Download } from "lucide-react";
 import { ProfileImage } from "./ui/ProfileImage";
-// import { useInView } from "react-intersection-observer";
+import { MenuList } from "@/utils/db";
+import { store } from "@/utils/hook";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const HeroSection = () => {
-  // const { ref: homeRef, inView: homeInView } = useInView({
-  //   threshold: 0.5,
-  // });
-  // if (homeInView) {
-  // }
+  const { scroll, size, setsize, setscroll, setactive } = store();
+  const { ref: homeRef, inView: homeInView } = useInView({
+    threshold: 0.5,
+  });
+  useEffect(() => {
+    if (homeInView && scroll) {
+      const value = MenuList.find((menu) => menu.name == "home");
+      setsize({
+        widthValue: value?.LargeScreen.width || "",
+        leftValue: value?.LargeScreen.left || "",
+      });
+      setscroll(true);
+      setactive("home");
+    }
+  }, [homeInView, setsize, setscroll, scroll, setactive]);
+  console.log(size);
   return (
     <div
-      // ref={homeRef}
+      ref={homeRef}
       className="container mx-auto grid h-full grid-cols-1 md:grid-cols-2"
     >
       <Introduction />

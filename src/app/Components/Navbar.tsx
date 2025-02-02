@@ -3,7 +3,7 @@ import React from "react";
 import type { MenuType } from "@/Types/type";
 import { MenuList } from "@/utils/db";
 import Logo from "./ui/Logo";
-// import { store } from "@/utils/hook";
+import { store } from "@/utils/hook";
 
 const Navbar = () => {
   return (
@@ -16,17 +16,17 @@ const Navbar = () => {
 };
 
 const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
-  // const { active, setactive, size, setsize } = store();
-  // const path = typeof window !== "undefined" ? window.location.hash : "";
-  // const currentActive = items.find((item) => item.href == path);
-
+  const { size, setsize, setscroll, active, setactive } = store();
+  const activePath = MenuList.find((path) => path.name == active);
   return (
     <div className="relative z-50 hidden items-center justify-center rounded-lg border border-white/15 bg-white/10 px-2.5 py-1.5 backdrop-blur lg:flex">
       <div className="relative flex items-center justify-center gap-3">
-        {/* <div
-          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-white/20 duration-300"
-          style={{ width: `${size.width}`, left: `${size.left}` }}
-        /> */}
+        {
+          <div
+            className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-white/20 duration-300"
+            style={{ width: `${size.width}`, left: `${size.left}` }}
+          />
+        }
 
         {items.map((menu, index) => (
           <a
@@ -34,23 +34,24 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
             className={`cursor-pointer rounded-lg px-3 py-2`}
             href={menu.href}
             onMouseEnter={() => {
-              // setsize({
-              //   leftValue: menu.LargeScreen.left,
-              //   widthValue: menu.LargeScreen.width,
-              // });
+              setsize({
+                leftValue: menu.LargeScreen.left,
+                widthValue: menu.LargeScreen.width,
+              });
             }}
             onMouseLeave={() => {
-              // setsize({
-              //   leftValue: currentActive?.LargeScreen.left || "",
-              //   widthValue: currentActive?.LargeScreen.width || "",
-              // });
+              setsize({
+                leftValue: activePath?.LargeScreen.left || "",
+                widthValue: activePath?.LargeScreen.width || "",
+              });
             }}
             onClick={() => {
-              // setactive(menu.name);
-              // setsize({
-              //   leftValue: menu.LargeScreen.left,
-              //   widthValue: menu.LargeScreen.width,
-              // });
+              setsize({
+                leftValue: menu.LargeScreen.left,
+                widthValue: menu.LargeScreen.width,
+              });
+              setactive(menu.name);
+              setscroll(false);
             }}
           >
             <h1 className="font-poppins text-base font-medium capitalize">

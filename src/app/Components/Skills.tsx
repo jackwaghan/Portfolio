@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TbBrandCss3 } from "react-icons/tb";
 import { RiJavascriptLine } from "react-icons/ri";
 import { LiaHtml5 } from "react-icons/lia";
@@ -18,12 +18,24 @@ import Vscode from "../../../public/Vscode.svg";
 import type { SkillItem } from "@/Types/type";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { store } from "@/utils/hook";
+import { MenuList } from "@/utils/db";
 const Skills = () => {
+  const { setsize, scroll, setscroll, setactive } = store();
   const { ref: skillsRef, inView: skillsInView } = useInView({
     threshold: 0.5,
   });
-  if (skillsInView) {
-  }
+  useEffect(() => {
+    if (skillsInView && scroll) {
+      const value = MenuList.find((menu) => menu.name == "skills");
+      setsize({
+        widthValue: value?.LargeScreen.width || "",
+        leftValue: value?.LargeScreen.left || "",
+      });
+      setscroll(true);
+      setactive("skills");
+    }
+  }, [skillsInView, setsize, scroll, setscroll, setactive]);
   return (
     <div
       id="skills"

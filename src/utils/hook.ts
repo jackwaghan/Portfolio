@@ -33,14 +33,17 @@ export function useScroll() {
 }
 
 interface storeprops {
+  size: {
+    width: string;
+    left: string;
+  };
+  setsize: (value: { widthValue: string; leftValue: string }) => void;
   active: string;
   setactive: (value: string) => void;
-  size: { width: string; left: string };
-  setsize: (value: { widthValue: string; leftValue: string }) => void;
+  scroll: boolean;
+  setscroll: (value: boolean) => void;
 }
 export const store = create<storeprops>((set) => ({
-  active: "",
-  setactive: (state) => set({ active: state }),
   size: { width: "0", left: "0" },
   setsize: ({ widthValue, leftValue }) =>
     set({
@@ -49,4 +52,10 @@ export const store = create<storeprops>((set) => ({
         left: leftValue,
       },
     }),
+
+  active: "",
+  setactive: (value) => set({ active: value }),
+
+  scroll: true,
+  setscroll: (value) => set({ scroll: value }),
 }));
