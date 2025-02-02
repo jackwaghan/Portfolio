@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="container mx-auto flex h-full flex-col items-center justify-center p-4">
           <div className="flex flex-col items-center gap-8 md:gap-14">
             <p className="font-mono text-3xl font-semibold tracking-tight text-orange-300 lg:text-6xl">
-              Let&apos;s Connect ❤️
+              Let&apos;s Connect <span className="animate-pulse">❤️</span>
             </p>
             <div className="flex gap-2 rounded-xl border border-white/15 bg-white/5 px-2 py-1 shadow-2xl lg:px-4 lg:py-2">
               {socialLinks.map((link, index) => (

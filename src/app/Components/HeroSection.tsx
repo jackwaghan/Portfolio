@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 const HeroSection = () => {
-  const { scroll, size, setsize, setscroll, active, setactive } = store();
+  const { scroll, setsize, setscroll, active, setactive } = store();
   const { ref: homeRef, inView: homeInView } = useInView({
     threshold: 0.5,
   });
@@ -21,7 +21,6 @@ const HeroSection = () => {
       setactive("home");
     }
   }, [homeInView, setsize, setscroll, scroll, active, setactive]);
-  console.log(size);
   return (
     <div
       ref={homeRef}

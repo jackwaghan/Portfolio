@@ -1,5 +1,8 @@
-import { Button } from "./ui/Button";
-
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { formSchema, FormValues } from "@/Types/type";
+import { AiOutlineLoading } from "react-icons/ai";
+import { useState } from "react";
 const Contact = () => {
   return (
     <div id="contact" className="container mx-auto flex flex-col">
@@ -19,9 +22,32 @@ const Contact = () => {
 export default Contact;
 
 const Form = () => {
+  const [data, setdata] = useState();
+  const {
+    register,
+    handleSubmit,
+    reset,
+
+    formState: { errors, isSubmitSuccessful, isSubmitting },
+  } = useForm<FormValues>({ resolver: zodResolver(formSchema) });
+
+  const submit = async (data: FormValues) => {
+    const request = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const response = await request.json();
+    if (response) {
+      setdata(response.message);
+      reset();
+    }
+  };
   return (
     <div className="relative order-2 mx-auto mt-10 w-5/6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-3xl md:order-1 md:mt-0 md:w-1/2 md:p-10">
-      <form action="submit">
+      <form onSubmit={handleSubmit(submit)}>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <label
@@ -32,10 +58,13 @@ const Form = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
-              className="rounded-lg border border-white/10 bg-white/10 px-2 py-1 focus:outline-none"
+              {...register("name")}
+              placeholder="Jack"
+              className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.name ? "ring-red-600" : "ring-orange-300"}`}
             />
+            {errors.name && (
+              <p className="text-sm text-red-500">{errors.name.message}</p>
+            )}
           </div>
           <div className="flex flex-col gap-2">
             <label
@@ -46,10 +75,13 @@ const Form = () => {
             </label>
             <input
               type="email"
-              name="email"
-              id="email"
-              className="rounded-lg border border-white/10 bg-white/10 px-2 py-1 focus:outline-none"
+              {...register("email")}
+              placeholder="jackwaghan@gmail.com"
+              className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.email ? "ring-red-600" : "ring-orange-300"}`}
             />
+            {errors.email && (
+              <p className="text-sm text-red-500">{errors.email?.message}</p>
+            )}
           </div>
           <div className="flex flex-col gap-2">
             <label
@@ -59,13 +91,26 @@ const Form = () => {
               Message
             </label>
             <textarea
-              name="message"
-              id="message"
-              className="rounded-lg border border-white/10 bg-white/10 px-2 py-1 focus:outline-none"
+              {...register("message")}
+              placeholder="Hello Jack, I want to hire you for my project."
+              className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.message ? "ring-red-600" : "ring-orange-300"}`}
               rows={3}
             />
           </div>
-          <Button />
+          {errors.message && (
+            <p className="text-sm text-red-500">{errors.message?.message}</p>
+          )}
+          <button
+            type="submit"
+            className={`text-md mt-5 flex items-center justify-center rounded-md p-2 font-mono font-semibold text-black md:text-xl ${isSubmitting ? "cursor-not-allowed opacity-50" : ""} ${isSubmitSuccessful ? "cursor-not-allowed bg-orange-400 opacity-50" : "bg-orange-300"}`}
+            disabled={isSubmitting || isSubmitSuccessful}
+          >
+            {isSubmitting && (
+              <AiOutlineLoading size={25} className="animate-spin" />
+            )}
+            {isSubmitSuccessful && data}
+            {!isSubmitSuccessful && !isSubmitting && "Submit"}
+          </button>
         </div>
       </form>
       <div className="absolute inset-0 -z-10 bg-orange-300/10 blur-3xl" />

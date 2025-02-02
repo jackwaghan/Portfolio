@@ -22,14 +22,14 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
     <div className="relative z-50 hidden items-center justify-center rounded-lg border border-white/15 bg-white/10 px-2.5 py-1.5 backdrop-blur lg:flex">
       <div className="relative flex items-center justify-center gap-3">
         <div
-          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-white/20 duration-300"
+          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-orange-500 duration-300"
           style={{ width: `${size.width}`, left: `${size.left}` }}
         />
 
         {items.map((menu, index) => (
           <a
             key={index}
-            className={`cursor-pointer rounded-lg px-3 py-2`}
+            className={`cursor-pointer rounded-lg px-3 py-1.5`}
             href={menu.href}
             onMouseEnter={() => {
               setsize({
@@ -39,8 +39,8 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
             }}
             onMouseLeave={() => {
               setsize({
-                leftValue: activePath?.LargeScreen.left || "",
-                widthValue: activePath?.LargeScreen.width || "",
+                leftValue: activePath?.LargeScreen.left || "0",
+                widthValue: activePath?.LargeScreen.width || "0",
               });
             }}
             onClick={() => {

@@ -42,6 +42,12 @@ interface storeprops {
   setactive: (value: string) => void;
   scroll: boolean;
   setscroll: (value: boolean) => void;
+  formName: string;
+  setformName: (value: string) => void;
+  formEmail: string;
+  setformEmail: (value: string) => void;
+  formMessage: string;
+  setformMessage: (value: string) => void;
 }
 export const store = create<storeprops>((set) => ({
   size: { width: "0", left: "0" },
@@ -58,4 +64,11 @@ export const store = create<storeprops>((set) => ({
 
   scroll: true,
   setscroll: (value) => set({ scroll: value }),
+
+  formName: "",
+  setformName: (value) => set({ formName: value }),
+  formEmail: "",
+  setformEmail: (value) => set({ formEmail: value }),
+  formMessage: "",
+  setformMessage: (value) => set({ formMessage: value }),
 }));
