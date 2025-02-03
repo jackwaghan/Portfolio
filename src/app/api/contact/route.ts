@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
   const requestCount = (rateLimit.get(ip) || 0) + 1;
 
   if (requestCount > 1) {
-    return NextResponse.json({ message: "Too many requests" }, { status: 429 });
+    return NextResponse.json({ message: "Wait 1 minute" }, { status: 429 });
   }
 
   rateLimit.set(ip, requestCount);
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       from: "Jack Waghan <form@updates.jackwaghan.com>",
       to: [email],
       subject: "Contact Form Submission",
-      react: await EmailTemplate({ name, email, message }),
+      react: await EmailTemplate({ name }),
     });
     if (error) {
       console.log(error);

@@ -23,7 +23,7 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
     <div className="relative z-50 hidden items-center justify-center rounded-lg border border-white/15 bg-white/10 px-2.5 py-1.5 backdrop-blur lg:flex">
       <div className="relative flex items-center justify-center gap-3">
         <div
-          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-orange-400 duration-300"
+          className="absolute inset-0 -z-20 transform-gpu rounded-lg bg-orange-400 duration-500"
           style={{ width: `${size.width}`, left: `${size.left}` }}
         />
 
@@ -41,6 +41,7 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
             }}
             onMouseLeave={() => {
               sethover(false);
+
               setsize({
                 leftValue: activePath?.LargeScreen.left || "0",
                 widthValue: activePath?.LargeScreen.width || "0",
@@ -53,7 +54,7 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
             }}
           >
             <h1
-              className={`font-poppins text-base font-medium capitalize transition-colors duration-300 ${active == menu.name && !hover ? "text-black" : "text-white"}`}
+              className={`font-poppins text-base font-medium capitalize transition-colors duration-500 ${active == menu.name && !hover ? "text-black" : "text-white"}`}
             >
               {menu.name}
             </h1>
