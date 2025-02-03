@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   }
 
   rateLimit.set(ip, requestCount);
-  const { name, email, message } = await req.json();
+  const { name, email } = await req.json();
   try {
     const { data, error } = await resend.emails.send({
       from: "Jack Waghan <form@updates.jackwaghan.com>",
