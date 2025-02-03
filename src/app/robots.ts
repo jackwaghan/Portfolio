@@ -8,6 +8,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api"],
       },
+      {
+        userAgent: "Googlebot-Image",
+        allow: "/",
+      },
     ],
     sitemap: "https://jackwaghan.com/sitemap.xml",
   };

@@ -57,7 +57,9 @@ const Form = () => {
               Name
             </label>
             <input
+              id="name"
               type="text"
+              autoComplete="on"
               {...register("name")}
               placeholder="Jack"
               className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.name ? "ring-red-600" : "ring-orange-300"}`}
@@ -74,7 +76,9 @@ const Form = () => {
               Email
             </label>
             <input
+              id="email"
               type="email"
+              autoComplete="on"
               {...register("email")}
               placeholder="jackwaghan@gmail.com"
               className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.email ? "ring-red-600" : "ring-orange-300"}`}
@@ -91,6 +95,8 @@ const Form = () => {
               Message
             </label>
             <textarea
+              id="message"
+              autoComplete="on"
               {...register("message")}
               placeholder="Hello Jack, I want to hire you for my project."
               className={`rounded-lg border border-white/10 bg-white/10 px-4 py-1.5 placeholder:text-white/30 focus:outline-none focus:ring-2 ${errors.message ? "ring-red-600" : "ring-orange-300"}`}
