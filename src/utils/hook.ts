@@ -40,6 +40,8 @@ interface storeprops {
   setsize: (value: { widthValue: string; leftValue: string }) => void;
   active: string;
   setactive: (value: string) => void;
+  hover: boolean;
+  sethover: (value: boolean) => void;
   scroll: boolean;
   setscroll: (value: boolean) => void;
   formName: string;
@@ -61,6 +63,9 @@ export const store = create<storeprops>((set) => ({
 
   active: "",
   setactive: (value) => set({ active: value }),
+
+  hover: false,
+  sethover: (value) => set({ hover: value }),
 
   scroll: true,
   setscroll: (value) => set({ scroll: value }),

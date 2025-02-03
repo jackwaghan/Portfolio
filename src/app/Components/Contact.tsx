@@ -39,9 +39,11 @@ const Form = () => {
       },
       body: JSON.stringify(data),
     });
+    console.log(data);
     const response = await request.json();
     if (response) {
       setdata(response.message);
+      setTimeout(() => reset(), 3000);
       reset();
     }
   };
