@@ -8,8 +8,8 @@ export const ProfileImage = () => {
     <Image
       src={Profile}
       alt="Profile"
-      width={width > 768 ? 200 : 130}
-      height={width > 768 ? 200 : 130}
+      width={width! > 768 ? 200 : 130}
+      height={width! > 768 ? 200 : 130}
       className="rounded-2xl opacity-85"
     />
   );

@@ -1,10 +1,11 @@
 "use client";
 import { create } from "zustand";
 import { useEffect, useState } from "react";
+import { windowSize } from "@/Types/type";
 export function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
+  const [windowSize, setWindowSize] = useState<windowSize>({
+    width: undefined,
+    height: undefined,
   });
   useEffect(() => {
     function handleResize() {

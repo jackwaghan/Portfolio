@@ -33,6 +33,11 @@ export type SkillItem = {
   description: string;
 };
 
+export type windowSize = {
+  width: number | undefined;
+  height: number | undefined;
+};
+
 export const formSchema = z.object({
   name: z
     .string()
