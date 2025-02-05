@@ -20,11 +20,26 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { store } from "@/utils/hook";
 import { MenuList } from "@/utils/db";
+import { motion } from "framer-motion";
 const Skills = () => {
   const { setsize, scroll, setscroll, setactive, active } = store();
   const { ref: skillsRef, inView: skillsInView } = useInView({
     threshold: 0.5,
   });
+  const skillsVariants = {
+    initial: {
+      y: 100,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   useEffect(() => {
     if (skillsInView && (scroll || active == "skills")) {
       const value = MenuList.find((menu) => menu.name == "skills");
@@ -37,23 +52,51 @@ const Skills = () => {
     }
   }, [skillsInView, setsize, setscroll, setactive, active, scroll]);
   return (
-    <div
+    <motion.div
       id="skills"
       ref={skillsRef}
       className="container mx-auto flex h-full w-full flex-col px-4 pt-20 md:pt-36"
     >
-      <div className="flex flex-col items-center justify-center gap-6">
+      <motion.div
+        variants={skillsVariants}
+        initial="initial"
+        viewport={{ amount: 0.5, once: true }}
+        whileInView="animate"
+        className="flex flex-col items-center justify-center gap-6"
+      >
         <h1 className="font-mono text-4xl font-bold tracking-tight text-orange-300 md:text-6xl">
           Skills
         </h1>
         <p className="w-4/5 text-center font-poppins font-semibold text-white/40 md:text-2xl">
           Here are my Skills on which I am experienced over time
         </p>
-      </div>
-      <SkillSection title="Language" skills={SkillsList.Language} />
-      <SkillSection title="Framework" skills={SkillsList.Framework} />
-      <SkillSection title="Tools" skills={SkillsList.Tools} />
-    </div>
+      </motion.div>
+      <motion.div
+        variants={skillsVariants}
+        initial="initial"
+        whileInView={"animate"}
+        viewport={{ amount: 0.3, once: true }}
+      >
+        <SkillSection title="Language" skills={SkillsList.Language} />
+      </motion.div>
+
+      <motion.div
+        variants={skillsVariants}
+        initial="initial"
+        whileInView={"animate"}
+        viewport={{ amount: 0.3, once: true }}
+      >
+        <SkillSection title="Framework" skills={SkillsList.Framework} />
+      </motion.div>
+      <motion.div
+        variants={skillsVariants}
+        initial="initial"
+        whileInView={"animate"}
+        viewport={{ amount: 0.3, once: true }}
+      >
+        <SkillSection title="Tools" skills={SkillsList.Tools} />
+      </motion.div>
+    </motion.div>
   );
 };
 
