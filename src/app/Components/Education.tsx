@@ -2,6 +2,7 @@ import { MenuList } from "@/utils/db";
 import { store } from "@/utils/hook";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 const educationData = [
   {
     title: "Secondary Education",
@@ -29,6 +30,20 @@ interface EducationItemProps {
   description: string;
   alignRight: boolean;
 }
+const educationVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const EducationItem: React.FC<EducationItemProps> = ({
   title,
@@ -40,9 +55,13 @@ const EducationItem: React.FC<EducationItemProps> = ({
     className={`relative flex ${alignRight ? "justify-end" : "justify-start"}`}
   >
     <div className="absolute inset-0 -z-10 flex items-center justify-start pl-4 md:justify-center md:pl-1">
-      <div className="h-3 w-3 rounded-full bg-white"></div>
+      <div className="h-3 w-3 rounded-full bg-white" />
     </div>
-    <div
+    <motion.div
+      variants={educationVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.7, once: true }}
       className={`ml-16 flex flex-col gap-4 rounded-lg border border-white/10 bg-white/5 p-4 md:w-[40%] ${alignRight ? "md:mr-10" : "md:ml-10"}`}
     >
       <h1 className="font-mono text-lg font-bold text-orange-200 md:text-2xl">
@@ -54,7 +73,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
       <h1 className="font-poppins text-sm leading-normal text-white/60 lg:text-base lg:leading-relaxed">
         {description}
       </h1>
-    </div>
+    </motion.div>
   </div>
 );
 
@@ -76,7 +95,7 @@ const Education = () => {
   }, [educationInView, setsize, setscroll, scroll, setactive, active]);
 
   return (
-    <div
+    <motion.div
       ref={educationRef}
       id="education"
       className="container mx-auto px-4 pt-20 md:pt-32"
@@ -88,7 +107,7 @@ const Education = () => {
       </div>
       <div className="relative mt-20 flex justify-center md:mt-32">
         <div className="absolute left-5 h-full w-1 rounded-full bg-white/50 md:left-1/2" />
-        <div className="flex flex-col gap-8 md:w-2/3 md:gap-12">
+        <motion.div className="flex flex-col gap-8 md:w-2/3 md:gap-12">
           {educationData.map((item, index) => (
             <EducationItem
               key={index}
@@ -98,9 +117,9 @@ const Education = () => {
               alignRight={index % 2 !== 0}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
