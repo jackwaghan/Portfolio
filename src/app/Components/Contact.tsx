@@ -3,17 +3,85 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FormValues } from "@/Types/type";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useState } from "react";
+import { motion } from "framer-motion";
 const Contact = () => {
+  const contactVariants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const contactFormVariants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const contactVisibleVariants = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div id="contact" className="container mx-auto flex flex-col">
-      <div className="flex items-center justify-center pt-20 md:pt-36">
+      <motion.div
+        variants={contactVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5, once: true }}
+        className="flex items-center justify-center pt-20 md:pt-36"
+      >
         <h1 className="font-mono text-4xl font-bold tracking-tight text-orange-300 md:text-6xl">
           Hire Me
         </h1>
-      </div>
-      <div className="container mx-auto mt-16 grid h-full w-full grid-rows-1 gap-4 px-4 md:mt-32 md:grid-cols-2">
-        <Form />
-        <Email />
+      </motion.div>
+      <div className="container mx-auto mt-16 grid h-full w-full grid-rows-1 items-center gap-4 px-4 md:mt-32 md:grid-cols-2">
+        <motion.div
+          variants={contactFormVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.5, once: true }}
+          className="order-2 md:order-1"
+        >
+          <Form />
+        </motion.div>
+        <motion.div
+          variants={contactVisibleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.5, once: true }}
+          className="order-1 md:order-2"
+        >
+          <Email />
+        </motion.div>
       </div>
     </div>
   );
@@ -48,7 +116,7 @@ const Form = () => {
     }
   };
   return (
-    <div className="relative order-2 mx-auto mt-10 w-5/6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-3xl md:order-1 md:mt-0 md:w-1/2 md:p-10">
+    <div className="relative mx-auto mt-10 w-5/6 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-3xl md:mt-0 md:w-1/2 md:p-10">
       <form onSubmit={handleSubmit(submit)}>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
@@ -128,7 +196,7 @@ const Form = () => {
 
 const Email = () => {
   return (
-    <div className="order-1 mx-auto flex items-center md:order-2">
+    <div className="mx-auto flex justify-center">
       <div className="flex flex-col gap-2 rounded-2xl border-4 border-dotted border-orange-200/60 p-4 md:gap-4 md:p-8">
         <div className="flex justify-center gap-2 font-mono text-xl font-semibold text-orange-200/30 md:text-4xl">
           <h1>91+</h1>

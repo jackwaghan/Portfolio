@@ -30,7 +30,7 @@ interface EducationItemProps {
   description: string;
   alignRight: boolean;
 }
-const educationVariants = {
+const educationItemsVariants = {
   hidden: {
     opacity: 0,
     x: -100,
@@ -58,7 +58,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
       <div className="h-3 w-3 rounded-full bg-white" />
     </div>
     <motion.div
-      variants={educationVariants}
+      variants={educationItemsVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.7, once: true }}
@@ -94,20 +94,47 @@ const Education = () => {
     }
   }, [educationInView, setsize, setscroll, scroll, setactive, active]);
 
+  const educationVariants = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <motion.div
       ref={educationRef}
       id="education"
       className="container mx-auto px-4 pt-20 md:pt-32"
     >
-      <div className="flex justify-center">
+      <motion.div
+        variants={educationVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5, once: true }}
+        className="flex justify-center"
+      >
         <h1 className="font-mono text-4xl font-bold text-orange-300 md:text-6xl">
           Education
         </h1>
-      </div>
-      <div className="relative mt-20 flex justify-center md:mt-32">
+      </motion.div>
+      <motion.div
+        variants={educationVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.1, once: true }}
+        className="relative mt-20 flex justify-center md:mt-32"
+      >
         <div className="absolute left-5 h-full w-1 rounded-full bg-white/50 md:left-1/2" />
-        <motion.div className="flex flex-col gap-8 md:w-2/3 md:gap-12">
+        <div className="flex flex-col gap-8 md:w-2/3 md:gap-12">
           {educationData.map((item, index) => (
             <EducationItem
               key={index}
@@ -117,8 +144,8 @@ const Education = () => {
               alignRight={index % 2 !== 0}
             />
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
