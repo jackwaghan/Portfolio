@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 const socialLinks = [
   {
     href: "https://www.linkedin.com/in/jackwaghan/",
@@ -34,15 +34,42 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const footerVariants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
   return (
     <div className="mt-20 md:mt-32">
       <div className="h-52 w-full bg-stone-800 md:h-80">
         <div className="container mx-auto flex h-full flex-col items-center justify-center p-4">
-          <div className="flex flex-col items-center gap-8 md:gap-14">
+          <motion.div
+            variants={footerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.1, once: true }}
+            className="flex flex-col items-center gap-8 md:gap-14"
+          >
             <p className="font-mono text-3xl font-semibold tracking-tight text-orange-300 lg:text-6xl">
               Let&apos;s Connect <span className="animate-pulse">❤️</span>
             </p>
-            <div className="flex gap-2 rounded-xl border border-white/15 bg-white/5 px-2 py-1 shadow-2xl lg:px-4 lg:py-2">
+            <motion.div
+              variants={footerVariants}
+              initial="hidden"
+              whileInView="visible"
+              className="flex gap-2 rounded-xl border border-white/15 bg-white/5 px-2 py-1 shadow-2xl lg:px-4 lg:py-2"
+            >
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
@@ -55,8 +82,8 @@ const Footer = () => {
                   {link.icon}
                 </a>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
