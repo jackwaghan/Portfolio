@@ -67,23 +67,23 @@ const Introduction = () => {
     animate: {
       opacity: 1,
       transition: {
-        duration: 1,
-        delay: 1.2,
+        duration: 3,
+        delay: 1.3,
       },
     },
   };
 
   const boxvariants = {
     initial: {
+      y: 50,
       opacity: 0,
-      y: 20,
     },
     animate: {
-      opacity: 1,
       y: 0,
+      opacity: 1,
       transition: {
-        duration: 1,
-        delay: 1.2,
+        duration: 2,
+        delay: 1.6,
       },
     },
   };
@@ -95,9 +95,9 @@ const Introduction = () => {
     animate: {
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.5,
         ease: easeIn,
-        delay: 1.8,
+        delay: 2.2,
       },
     },
   };
@@ -110,24 +110,7 @@ const Introduction = () => {
       opacity: 1,
       transition: {
         duration: 1,
-        delay: 2.4,
-      },
-    },
-  };
-
-  const resumeVariants = {
-    initial: {
-      opacity: 0,
-      scale: 0.8,
-    },
-    animate: {
-      opacity: 1,
-      scale: 1,
-
-      transition: {
-        duration: 0.4,
-        ease: easeIn,
-        delay: 2.6,
+        delay: 3,
       },
     },
   };
@@ -178,14 +161,9 @@ const Introduction = () => {
           className="absolute inset-0 -z-10 bg-orange-300/10 blur-3xl"
         />
       </motion.div>
-      <motion.div
-        variants={resumeVariants}
-        initial="initial"
-        animate="animate"
-        className="mt-6 lg:mt-14"
-      >
+      <div className="mt-6 lg:mt-14">
         <ResumeButton />
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -196,14 +174,14 @@ const Profile = () => {
   const imageVariants = {
     initial: {
       opacity: 0,
-      y: 20,
+      y: -20,
     },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 1,
-        delay: 1.2,
+        delay: 2,
       },
     },
   };
@@ -216,7 +194,7 @@ const Profile = () => {
       opacity: 1,
       transition: {
         duration: 1,
-        delay: 2.4,
+        delay: 2.6,
       },
     },
   };
@@ -242,12 +220,44 @@ const Profile = () => {
 };
 
 const ResumeButton = () => {
+  const resumeVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+
+      transition: {
+        duration: 0.4,
+        ease: easeIn,
+        delay: 3.2,
+      },
+    },
+  };
+
   return (
-    <div className="relative flex cursor-pointer items-center justify-center space-x-3 rounded-lg border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-3xl">
+    <motion.div
+      variants={resumeVariants}
+      initial="initial"
+      animate="animate"
+      whileHover={{
+        scale: 0.95,
+        transition: {
+          duration: 0.2,
+        },
+      }}
+      whileTap={{
+        scale: 0.8,
+        transition: {
+          duration: 0.2,
+        },
+      }}
+      className="relative flex cursor-pointer items-center justify-center space-x-3 rounded-lg border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-3xl"
+    >
       <h1 className="text-sm lg:text-base">Resume</h1>
       <Download size={20} />
       {/* <div className="absolute inset-0 -z-10 bg-orange-300/40 blur-3xl" /> */}
-    </div>
+    </motion.div>
   );
 };
 

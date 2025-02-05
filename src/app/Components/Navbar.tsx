@@ -102,7 +102,7 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
           </motion.a>
         ))}
       </div>
-      <div className="absolute -z-10 h-2/6 w-full bg-orange-400 blur-3xl" />
+      <div className="absolute -z-10 h-2/6 w-full bg-orange-300/60 blur-3xl" />
     </motion.div>
   );
 };
@@ -127,6 +127,20 @@ const HireMeButton = () => {
       variants={hireMeVariants}
       initial="initial"
       animate="animate"
+      whileHover={{
+        scale: 0.95,
+        transition: {
+          duration: 0.2,
+          ease: "easeInOut",
+        },
+      }}
+      whileTap={{
+        scale: 0.8,
+        transition: {
+          duration: 0.2,
+          ease: "easeInOut",
+        },
+      }}
       href="#contact"
       className="flex cursor-pointer items-center justify-center rounded-lg border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-3xl"
     >
