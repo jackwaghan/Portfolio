@@ -58,7 +58,7 @@ const Footer = () => {
             variants={footerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.1, once: true }}
+            viewport={{ once: true }}
             className="flex flex-col items-center gap-8 md:gap-14"
           >
             <p className="font-mono text-3xl font-semibold tracking-tight text-orange-300 lg:text-6xl">
@@ -68,6 +68,7 @@ const Footer = () => {
               variants={footerVariants}
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true }}
               className="flex gap-2 rounded-xl border border-white/15 bg-white/5 px-2 py-1 shadow-2xl lg:px-4 lg:py-2"
             >
               {socialLinks.map((link, index) => (
