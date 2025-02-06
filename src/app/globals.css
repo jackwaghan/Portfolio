@@ -6,20 +6,11 @@ html {
   @apply overflow-x-hidden bg-stone-900 text-white/80;
   scroll-behavior: smooth;
 }
-/* width */
+
+body {
+  @apply font-poppins;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 100px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 100px;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #969393;
+  display: none;
 }

@@ -15,7 +15,6 @@ const Contact = () => {
       y: 0,
       transition: {
         duration: 1,
-        ease: "easeInOut",
       },
     },
   };
@@ -30,7 +29,6 @@ const Contact = () => {
       x: 0,
       transition: {
         duration: 1,
-        ease: "easeInOut",
       },
     },
   };
@@ -45,13 +43,12 @@ const Contact = () => {
       x: 0,
       transition: {
         duration: 1,
-        ease: "easeInOut",
       },
     },
   };
 
   return (
-    <div id="contact" className="container mx-auto flex flex-col">
+    <div id="contact" className="container mx-auto flex transform-gpu flex-col">
       <motion.div
         variants={contactVariants}
         initial="hidden"
@@ -68,7 +65,7 @@ const Contact = () => {
           variants={contactFormVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.5, once: true }}
+          viewport={{ amount: 0.3, once: true }}
           className="order-2 md:order-1"
         >
           <Form />
@@ -77,7 +74,7 @@ const Contact = () => {
           variants={contactVisibleVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.5, once: true }}
+          viewport={{ amount: 0.3, once: true }}
           className="order-1 md:order-2"
         >
           <Email />
@@ -176,7 +173,10 @@ const Form = () => {
           {errors.message && (
             <p className="text-sm text-red-500">{errors.message?.message}</p>
           )}
-          <button
+
+          <motion.button
+            whileTap={{ scale: 0.85, transition: { duration: 0.2 } }}
+            whileHover={{ scale: 0.95, transition: { duration: 0.2 } }}
             type="submit"
             className={`text-md mt-5 flex items-center justify-center rounded-md p-2 font-mono font-semibold text-black md:text-xl ${isSubmitting ? "cursor-not-allowed opacity-50" : ""} ${isSubmitSuccessful ? "cursor-not-allowed bg-orange-400 opacity-50" : "bg-orange-300"}`}
             disabled={isSubmitting || isSubmitSuccessful}
@@ -186,7 +186,7 @@ const Form = () => {
             )}
             {isSubmitSuccessful && data}
             {!isSubmitSuccessful && !isSubmitting && "Submit"}
-          </button>
+          </motion.button>
         </div>
       </form>
       <div className="absolute inset-0 -z-10 bg-orange-300/10 blur-3xl" />

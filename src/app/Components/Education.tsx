@@ -40,7 +40,6 @@ const educationItemsVariants = {
     x: 0,
     transition: {
       duration: 1,
-      ease: "easeInOut",
     },
   },
 };
@@ -109,10 +108,10 @@ const Education = () => {
   };
 
   return (
-    <motion.div
+    <div
       ref={educationRef}
       id="education"
-      className="container mx-auto px-4 pt-20 md:pt-32"
+      className="container mx-auto transform-gpu px-4 pt-20 md:pt-32"
     >
       <motion.div
         variants={educationVariants}
@@ -125,13 +124,7 @@ const Education = () => {
           Education
         </h1>
       </motion.div>
-      <motion.div
-        variants={educationVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1, once: true }}
-        className="relative mt-20 flex justify-center md:mt-32"
-      >
+      <div className="relative mt-20 flex justify-center md:mt-32">
         <div className="absolute left-5 h-full w-1 rounded-full bg-white/50 md:left-1/2" />
         <div className="flex flex-col gap-8 md:w-2/3 md:gap-12">
           {educationData.map((item, index) => (
@@ -144,8 +137,8 @@ const Education = () => {
             />
           ))}
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

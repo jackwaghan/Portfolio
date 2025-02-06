@@ -7,6 +7,7 @@ const Education = dynamic(() => import("./Components/Education"));
 const Contact = dynamic(() => import("./Components/Contact"));
 const Footer = dynamic(() => import("./Components/Footer"));
 const Skills = dynamic(() => import("./Components/Skills"));
+import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import ScrollAnchor from "./Components/ScrollAnchor";
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
       <Education />
       <Contact />
       <Footer />
-      {scrolled && <ScrollAnchor />}
+      <AnimatePresence>{scrolled && <ScrollAnchor />}</AnimatePresence>
     </div>
   );
 }

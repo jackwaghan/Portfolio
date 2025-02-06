@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ReactLenis } from "lenis/react";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -56,8 +57,10 @@ export default function RootLayout({
           type="image/png"
         />
       </head>
-      <body className={`${poppins.variable} antialiased`}>
-        <main>{children}</main>
+      <body className={`${poppins.variable} overflow-x-clip antialiased`}>
+        <main>
+          <ReactLenis root>{children}</ReactLenis>
+        </main>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -8,7 +8,7 @@ import { store } from "@/utils/hook";
 
 const Navbar = () => {
   return (
-    <nav className="container sticky top-0 z-50 mx-auto flex h-16 w-full items-center justify-between bg-transparent px-4 backdrop-blur lg:h-20">
+    <nav className="container sticky top-0 z-50 mx-auto flex h-16 w-full transform-gpu items-center justify-between bg-transparent px-4 backdrop-blur lg:h-20">
       <Logo />
       <LargeScreenMenu items={MenuList} />
       <HireMeButton />

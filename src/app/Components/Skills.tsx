@@ -55,7 +55,7 @@ const Skills = () => {
     <motion.div
       id="skills"
       ref={skillsRef}
-      className="container mx-auto flex h-full w-full flex-col px-4 pt-20 md:pt-36"
+      className="container mx-auto flex h-full w-full transform-gpu flex-col px-4 pt-20 md:pt-36"
     >
       <motion.div
         variants={skillsVariants}

@@ -37,28 +37,25 @@ const Footer = () => {
   const footerVariants = {
     hidden: {
       opacity: 0,
-      y: 100,
     },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 1,
-        ease: "easeInOut",
         staggerChildren: 0.5,
       },
     },
   };
 
   return (
-    <div className="mt-20 md:mt-32">
+    <div className="mt-20 transform-gpu md:mt-32">
       <div className="h-52 w-full bg-stone-800 md:h-80">
         <div className="container mx-auto flex h-full flex-col items-center justify-center p-4">
           <motion.div
             variants={footerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ amount: 0.5, once: true }}
             className="flex flex-col items-center gap-8 md:gap-14"
           >
             <p className="font-mono text-3xl font-semibold tracking-tight text-orange-300 lg:text-6xl">
