@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import type { MenuType } from "@/Types/type";
 import { MenuList } from "@/utils/db";
 import Logo from "./ui/Logo";
-import { store } from "@/utils/hook";
+import { store, useWindowSize } from "@/utils/hook";
 
 const Navbar = () => {
   return (
@@ -127,13 +127,11 @@ const HireMeButton = () => {
       variants={hireMeVariants}
       initial="initial"
       animate="animate"
-      whileHover={{
-        scale: 0.95,
-        transition: {
-          duration: 0.2,
-          ease: "easeInOut",
-        },
-      }}
+      whileHover={
+        useWindowSize().width! > 768
+          ? { scale: 0.95, transition: { duration: 0.2 } }
+          : {}
+      }
       whileTap={{
         scale: 0.8,
         transition: {

@@ -4,6 +4,7 @@ import { formSchema, FormValues } from "@/Types/type";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useWindowSize } from "@/utils/hook";
 const Contact = () => {
   const contactVariants = {
     hidden: {
@@ -85,7 +86,6 @@ const Contact = () => {
 };
 
 export default Contact;
-
 const Form = () => {
   const [data, setdata] = useState();
   const {
@@ -176,7 +176,11 @@ const Form = () => {
 
           <motion.button
             whileTap={{ scale: 0.85, transition: { duration: 0.2 } }}
-            whileHover={{ scale: 0.95, transition: { duration: 0.2 } }}
+            whileHover={
+              useWindowSize().width! > 768
+                ? { scale: 0.95, transition: { duration: 0.2 } }
+                : {}
+            }
             type="submit"
             className={`text-md mt-5 flex items-center justify-center rounded-md p-2 font-mono font-semibold text-black md:text-xl ${isSubmitting ? "cursor-not-allowed opacity-50" : ""} ${isSubmitSuccessful ? "cursor-not-allowed bg-orange-400 opacity-50" : "bg-orange-300"}`}
             disabled={isSubmitting || isSubmitSuccessful}

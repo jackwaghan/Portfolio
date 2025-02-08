@@ -77,6 +77,14 @@ export const SkillsList = {
       name: "React" as const,
       description: "A JavaScript library for building user interfaces.",
     },
+    {
+      name: "Java" as const,
+      description: "A class-based, object-oriented programming language.",
+    },
+    {
+      name: "SQL" as const,
+      description: "Relational database management system language.",
+    },
   ],
   Framework: [
     {
@@ -92,6 +100,19 @@ export const SkillsList = {
       name: "Next Js" as const,
       description:
         "A React framework for server-side rendering and static site generation.",
+    },
+    {
+      name: "Express Js" as const,
+      description: "A minimal and flexible Node.js web application framework.",
+    },
+    {
+      name: "Hono" as const,
+      description: "A simple and lightweight task runner for Node.js.",
+    },
+    {
+      name: "Fast API" as const,
+      description:
+        "A modern, fast , web framework for building APIs with Python .",
     },
   ],
   Tools: [
@@ -110,10 +131,7 @@ export const SkillsList = {
       description:
         "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
     },
-    {
-      name: "Express Js" as const,
-      description: "A minimal and flexible Node.js web application framework.",
-    },
+
     {
       name: "VS Code" as const,
       description:
@@ -127,6 +145,11 @@ export const SkillsList = {
       name: "Cloudflare Workers" as const,
       description:
         "A serverless platform that enables developers to deploy applications globally.",
+    },
+    {
+      name: "Supabase" as const,
+      description:
+        "An open-source Firebase alternative with a Postgres database.",
     },
   ],
 };

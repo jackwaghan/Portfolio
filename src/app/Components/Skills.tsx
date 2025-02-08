@@ -15,6 +15,11 @@ import GitHub from "../../../public/GitHub.svg";
 import Nodejs from "../../../public/Nodejs.svg";
 import Expressjs from "../../../public/Expressjs.svg";
 import Vscode from "../../../public/Vscode.svg";
+import Java from "../../../public/java.svg";
+import SQL from "../../../public/sql.svg";
+import Supabase from "../../../public/supabase.svg";
+import Hono from "../../../public/Hono.png";
+import FastAPI from "../../../public/Fast API.png";
 import type { SkillItem } from "@/Types/type";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
@@ -130,10 +135,16 @@ const SkillCard = ({ item }: { item: SkillItem }) => {
     JavaScript: <RiJavascriptLine className="text-yellow-400" size={20} />,
     Python: <Image src={Python} alt="Python Icon" width={35} />,
     React: <FaReact className="text-sky-500" size={20} />,
+    Java: <Image src={Java} alt="Java" width={20} />,
+    SQL: <Image src={SQL} alt="SQL" width={20} />,
+    Supabase: <Image src={Supabase} alt="Supabase" width={20} />,
+    Hono: <Image src={Hono} alt="Hono" width={20} />,
+    "Fast API": <Image src={FastAPI} alt="Fast API" width={20} />,
     "Tailwind CSS": <Image src={TailwindCss} alt="Tailwind CSS" width={20} />,
     Typescript: <Image src={Typescript} alt="Typescript" width={20} />,
     "Next Js": <Image src={Nextjs} alt="Next Js" width={20} />,
     Git: <Image src={Git} alt="Git" width={20} />,
+
     GitHub: <Image src={GitHub} alt="GitHub" width={20} />,
     "Node Js": <Image src={Nodejs} alt="Node Js" width={20} />,
     "Express Js": (

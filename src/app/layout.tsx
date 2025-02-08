@@ -48,21 +48,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="../../public/favicon-32x32.png" sizes="32x32" />
-
-        <link
-          rel="apple-touch-icon"
-          href="../../public/apple-touch-icon.png"
-          type="image/png"
-        />
-      </head>
       <body className={`${poppins.variable} overflow-x-clip antialiased`}>
         <main>
           <ReactLenis root>{children}</ReactLenis>
+          <Analytics />
+          <SpeedInsights />
         </main>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

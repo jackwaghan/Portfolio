@@ -25,7 +25,6 @@ Welcome to my personal portfolio! This site showcases my projects, skills, and e
 - `public/`: Static assets
 - `Types`: Export types
 - `utils`: Hooks and db
-  
 
 ## 🛠️ Installation
 
@@ -36,6 +35,7 @@ Follow these steps to get a local copy up and running:
    git clone https://github.com/jackwaghan/portfolio.git
    ```
 2. **Install dependencies**
+
    ```sh
    bun install
    ```
@@ -64,11 +64,3 @@ Contributions are what make the open-source community such an amazing place to l
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📞 Contact
-
-Feel free to reach out to me via [email](mailto:jackwaghan@gmail.com) or connect with me on [LinkedIn](https://linkedin.com/in/jackwaghan).
-
----
-
-Feel free to review and adjust the content as needed.

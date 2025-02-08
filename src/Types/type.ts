@@ -20,6 +20,8 @@ export type SkillItem = {
     | "JavaScript"
     | "Python"
     | "React"
+    | "Java"
+    | "SQL"
     | "Tailwind CSS"
     | "Typescript"
     | "Next Js"
@@ -29,7 +31,10 @@ export type SkillItem = {
     | "Express Js"
     | "VS Code"
     | "Bun"
-    | "Cloudflare Workers";
+    | "Cloudflare Workers"
+    | "Hono"
+    | "Fast API"
+    | "Supabase";
   description: string;
 };
 

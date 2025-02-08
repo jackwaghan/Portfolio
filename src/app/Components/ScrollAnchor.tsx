@@ -1,6 +1,7 @@
 import React from "react";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { useWindowSize } from "@/utils/hook";
 
 const ScrollAnchor = () => {
   const scrollAnchoraVariants = {
@@ -47,7 +48,7 @@ const ScrollAnchor = () => {
       initial="initial"
       animate="show"
       exit="exit"
-      whileHover="hover"
+      whileHover={useWindowSize().width! > 768 ? "hover" : {}}
       whileTap="tap"
       onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
       className="trandform-gpu fixed bottom-5 right-5 z-50"

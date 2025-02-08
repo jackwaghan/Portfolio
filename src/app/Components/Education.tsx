@@ -17,7 +17,7 @@ const educationData = [
       "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 84% score in the board examinations.",
   },
   {
-    title: "Bachelor of Engineering in Computer Science and Engineering",
+    title: "B.Tech in Computer Science and Engineering (AI & ML)",
     year: "2022 - 2026",
     description:
       "Pursuing a Bachelor's degree in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at SRM Institute of Science and Technology, Kattankulathur, Tamil Nadu.",
