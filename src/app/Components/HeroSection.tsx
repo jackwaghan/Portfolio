@@ -234,7 +234,7 @@ const ResumeButton = () => {
   };
 
   return (
-    <motion.div
+    <motion.a
       variants={resumeVariants}
       initial="initial"
       animate="animate"
@@ -250,11 +250,15 @@ const ResumeButton = () => {
           ease: "easeInOut",
         },
       }}
+      href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/jackwaghan/Resume/main/Resume.pdf"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Resume"
       className="relative flex cursor-pointer items-center justify-center space-x-3 rounded-lg border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-3xl"
     >
       <h1 className="text-sm lg:text-base">Resume</h1>
       <Download size={20} />
-    </motion.div>
+    </motion.a>
   );
 };
 
