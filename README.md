@@ -1,4 +1,6 @@
-# 🌟 Modern Portfolio
+# 🌟 A Modern Portfolio Website
+
+![Portfolio Screenshot](./public/Portfolio%20Screenshot.png)
 
 Welcome to my personal portfolio! This site showcases my projects, skills, and experiences, built using the powerful [Next.js](https://nextjs.org) framework and [TypeScript](https://www.typescriptlang.org).
 
@@ -13,13 +15,14 @@ Welcome to my personal portfolio! This site showcases my projects, skills, and e
 - **State Management** with `zustand`
 - **Email Components** using `@react-email/components`
 - **Performance Analytics** with `@vercel/analytics` and `@vercel/speed-insights`
-- **Efficient Caching** using `lru-cache`
+- **Rate Limiting** using `lru-cache`
 - **Smooth Animations** with `motion`
 - **Visibility Monitoring** using `react-intersection-observer`
 - **Schema Validation** with `zod`
 
 ## 📂 Project Structure
 
+- `src/`: app directory
 - `app/`: Main application directory
 - `components/`: Reusable UI components
 - `public/`: Static assets
@@ -40,7 +43,9 @@ Follow these steps to get a local copy up and running:
    bun install
    ```
 
-3. **Run the development server**
+3. **Add Resend API Key in your `.env.local`**
+
+4. **Run the development server**
    ```sh
    bun run dev
    ```
