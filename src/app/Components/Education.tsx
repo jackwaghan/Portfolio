@@ -3,18 +3,19 @@ import { store } from "@/utils/hook";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+
 const educationData = [
   {
     title: "Secondary Education",
     year: "2019 - 2020",
     description:
-      "Completed secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 95% score in the board examinations.",
+      "Completed secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 95.2% score in the board examinations.",
   },
   {
     title: "Higher Secondary Education",
     year: "2021 - 2022",
     description:
-      "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 84% score in the board examinations.",
+      "Completed higher secondary education at Senthil Matric Higher Secondary School, Tamil Nadu, achieving a 83.6% score in the board examinations.",
   },
   {
     title: "B.Tech in Computer Science and Engineering (AI & ML)",
