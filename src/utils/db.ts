@@ -159,14 +159,14 @@ export const projects = [
     title: "Chatty AI",
     description:
       "A modern chat application with Multi AI Model integration for enhanced user experience. Features a fast and smooth UI/UX, built for performance.",
-    techStack: ["React", "Tailwind CSS", "TypeScript", "Zustand"],
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
     link: "https://chatty.jackwaghan.com/",
   },
   {
     title: "Tasky AI",
     description:
       "A task management application leveraging AI for efficiency and productivity. Features a clean and intuitive interface.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Supabase"],
     link: "https://tasky.jackwaghan.com/",
   },
   {

@@ -1,6 +1,6 @@
 "use client";
 import { MenuList, projects } from "@/utils/db";
-import { store } from "@/utils/hook";
+import { store, useWindowSize } from "@/utils/hook";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink } from "lucide-react";
@@ -24,7 +24,7 @@ const Project = () => {
       setactive("projects");
     }
   }, [projectInView, setsize, setscroll, scroll, setactive, active]);
-
+  const { width } = useWindowSize();
   const projectVariants = {
     hidden: {
       y: 100,
@@ -85,7 +85,7 @@ const Project = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="group grid w-full grid-cols-1 gap-6 px-8 md:grid-cols-4"
+          className="group grid w-full grid-cols-1 items-center justify-center gap-6 px-8 transition-all duration-300 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -94,7 +94,7 @@ const Project = () => {
               whileInView="visible"
               viewport={{ amount: 0.7, once: true }}
               key={index}
-              className="flex h-80 w-full transform-gpu flex-col justify-between gap-5 rounded-lg border border-white/10 bg-white/5 p-4 shadow-2xl transition-all duration-300 hover:scale-95 md:h-72"
+              className={`flex h-full w-full transform-gpu flex-col justify-between gap-5 rounded-lg border border-white/10 bg-white/5 p-4 shadow-2xl transition-all duration-300 ${width! < 768 ? "" : "hover:scale-95"}`}
               onMouseEnter={() => {
                 setHover(true);
                 setShow(project.title);
@@ -115,7 +115,7 @@ const Project = () => {
                   aria-label="Projectlink"
                 >
                   <ExternalLink
-                    className={`${hover && project.title === show ? "opacity-100" : "opacity-0"} transform-gpu cursor-pointer transition-all duration-300 hover:scale-95 hover:stroke-orange-300`}
+                    className={`${(hover && project.title === show) || width! < 768 ? "opacity-100" : "opacity-0"} transform-gpu cursor-pointer transition-all duration-300 hover:scale-95 hover:stroke-orange-300`}
                     size={24}
                   />
                 </a>
@@ -133,7 +133,7 @@ const Project = () => {
               </div>
             </motion.div>
           ))}
-          <div className="flex h-80 w-full items-center justify-center rounded-lg border border-white/10 bg-white/5 text-center font-mono text-lg opacity-60 md:h-72">
+          <div className="flex h-60 w-full items-center justify-center rounded-lg border border-white/10 bg-white/5 text-center font-mono text-lg opacity-60 lg:h-full">
             <p className="animate-pulse">Uploading Soon...</p>
           </div>
         </motion.div>
