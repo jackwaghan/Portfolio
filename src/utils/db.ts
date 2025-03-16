@@ -153,3 +153,27 @@ export const SkillsList = {
     },
   ],
 };
+
+export const projects = [
+  {
+    title: "Chatty AI",
+    description:
+      "A modern chat application with Multi AI Model integration for enhanced user experience. Features a fast and smooth UI/UX, built for performance.",
+    techStack: ["React", "Tailwind CSS", "TypeScript", "Zustand"],
+    link: "https://chatty.jackwaghan.com/",
+  },
+  {
+    title: "Tasky AI",
+    description:
+      "A task management application leveraging AI for efficiency and productivity. Features a clean and intuitive interface.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
+    link: "https://tasky.jackwaghan.com/",
+  },
+  {
+    title: "Telegram Multi Bot",
+    description:
+      "Provides tools like AI Writer, Text to Speech, Web Capture, URL Shortener, Encryption/Decryption, Speech to Text, and Web Scraping in a single bot.",
+    techStack: ["Python", "Telegram API", "OpenAI API", "Fast API"],
+    link: "https://github.com/jackwaghan/Telegram-Multi-Bot",
+  },
+];

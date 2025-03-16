@@ -10,6 +10,7 @@ const Skills = dynamic(() => import("./Components/Skills"));
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import ScrollAnchor from "./Components/ScrollAnchor";
+import Project from "./Components/Project";
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const scroll = useScroll();
@@ -23,6 +24,7 @@ export default function Home() {
       <HeroSection />
       <Skills />
       <Education />
+      <Project />
       <Contact />
       <Footer />
       <AnimatePresence>{scrolled && <ScrollAnchor />}</AnimatePresence>
