@@ -177,3 +177,6 @@ export const projects = [
     link: "https://github.com/jackwaghan/Telegram-Multi-Bot",
   },
 ];
+
+export const resumeLink =
+  "https://docs.google.com/viewer?url=https://github.com/jackwaghan/Automate-Resume/raw/main/Resume.pdf";

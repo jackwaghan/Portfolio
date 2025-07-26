@@ -250,8 +250,7 @@ const ResumeButton = () => {
           ease: "easeInOut",
         },
       }}
-      href="https://docs.google.com/viewer?url=https://github.com/jackwaghan/Automate-Resume/raw/main/Resume.pdf
-"
+      href="/resume"
       target="_blank"
       rel="noreferrer"
       aria-label="Resume"
