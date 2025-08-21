@@ -94,7 +94,7 @@ const Project = () => {
               whileInView="visible"
               viewport={{ amount: 0.7, once: true }}
               key={index}
-              className={`flex h-full w-full transform-gpu flex-col justify-between gap-5 rounded-lg border border-white/10 bg-white/5 p-4 shadow-2xl transition-all duration-300 ${width! < 768 ? "" : "hover:scale-95"}`}
+              className={`flex h-full w-full transform-gpu flex-col justify-between gap-5 rounded-lg border border-white/10 bg-white/5 p-4 shadow-2xl transition-all duration-300 ${width! < 768 ? "" : "hover:scale-[0.98]"}`}
               onMouseEnter={() => {
                 setHover(true);
                 setShow(project.title);
@@ -115,7 +115,7 @@ const Project = () => {
                   aria-label="Projectlink"
                 >
                   <ExternalLink
-                    className={`${(hover && project.title === show) || width! < 768 ? "opacity-100" : "opacity-0"} transform-gpu cursor-pointer transition-all duration-300 hover:scale-95 hover:stroke-orange-300`}
+                    className={`${(hover && project.title === show) || width! < 768 ? "opacity-100" : "opacity-0"} transform-gpu cursor-pointer transition-all duration-300 hover:scale-[0.97] hover:stroke-orange-300`}
                     size={24}
                   />
                 </a>
@@ -133,7 +133,7 @@ const Project = () => {
               </div>
             </motion.div>
           ))}
-          <div className="flex h-60 w-full items-center justify-center rounded-lg border border-white/10 bg-white/5 text-center font-mono text-lg opacity-60 lg:h-full">
+          <div className="flex h-60 w-full items-center justify-center rounded-lg border border-white/10 bg-white/5 text-center font-mono text-lg opacity-60">
             <p className="animate-pulse">Uploading Soon...</p>
           </div>
         </motion.div>

@@ -156,27 +156,45 @@ export const SkillsList = {
 
 export const projects = [
   {
+    title: "AcademiaX",
+    description:
+      "A modern, sleek web application that provides a better alternative to the traditional SRM Portal for managing academic information.",
+    techStack: [
+      "Next.js",
+      "Typescript",
+      "Tailwind CSS",
+      "Zustand",
+      "Cheerio",
+      "Clourdflare Worker",
+    ],
+    link: "https://academiax.in",
+  },
+  {
     title: "Chatty AI",
     description:
       "A modern chat application with Multi AI Model integration for enhanced user experience. Features a fast and smooth UI/UX, built for performance.",
-    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Supabase", "Vercel"],
     link: "https://chatty.jackwaghan.com/",
   },
   {
     title: "Tasky AI",
     description:
       "A task management application leveraging AI for efficiency and productivity. Features a clean and intuitive interface.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Supabase"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand",
+      "Supabase",
+      "Vercel",
+    ],
     link: "https://tasky.jackwaghan.com/",
   },
   {
     title: "Telegram Multi Bot",
     description:
       "Provides tools like AI Writer, Text to Speech, Web Capture, URL Shortener, Encryption/Decryption, Speech to Text, and Web Scraping in a single bot.",
-    techStack: ["Python", "Telegram API", "OpenAI API", "Fast API"],
+    techStack: ["Python", "Telegram API", "OpenAI API", "Fast API", "Replit"],
     link: "https://github.com/jackwaghan/Telegram-Multi-Bot",
   },
 ];
-
-export const resumeLink =
-  "https://docs.google.com/viewer?url=https://github.com/jackwaghan/Automate-Resume/raw/main/Resume.pdf";

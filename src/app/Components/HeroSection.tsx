@@ -250,7 +250,7 @@ const ResumeButton = () => {
           ease: "easeInOut",
         },
       }}
-      href="/resume"
+      href="/srm-resume.pdf"
       target="_blank"
       rel="noreferrer"
       aria-label="Resume"
