@@ -30,7 +30,6 @@ const LargeScreenMenu = ({ items }: { items: MenuType[] }) => {
       opacity: 1,
       transition: {
         duration: 2,
-        type: "spring",
         stiffness: 50,
         damping: 10,
         staggerChildren: 0.4,

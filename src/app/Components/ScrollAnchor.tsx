@@ -30,14 +30,12 @@ const ScrollAnchor = () => {
       scale: 0.95,
       transition: {
         duration: 0.2,
-        ease: "easeInOut",
       },
     },
     tap: {
       scale: 0.7,
       transition: {
         duration: 0.2,
-        ease: "easeInOut",
       },
     },
   };
@@ -48,7 +46,7 @@ const ScrollAnchor = () => {
       initial="initial"
       animate="show"
       exit="exit"
-      whileHover={useWindowSize().width! > 768 ? "hover" : {}}
+      whileHover={useWindowSize().width! > 768 ? "hover" : undefined}
       whileTap="tap"
       onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
       className="trandform-gpu fixed bottom-5 right-5 z-50"
